@@ -4,7 +4,10 @@
   "description": "building an api for practice initial commit",
   "main": "index.js",
   "scripts": {
+    "make-seed": "npx knex seed:make dev --knexfile ./database/knexfile.js",
     "migrate": "npx knex migrate:latest --knexfile ./database/knexfile.js",
+    "seed": "npx knex seed:run --knexfile ./database/knexfile.js",
+    "down": "npx knex migrate:down --knexfile ./database/knexfile.js",
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,7 +22,9 @@
   },
   "homepage": "https://github.com/Evomatic/solo-api-project#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-csp-header": "^4.1.0",
     "knex": "^0.95.4",
     "objection": "^2.2.15",
     "pg": "^8.6.0",
